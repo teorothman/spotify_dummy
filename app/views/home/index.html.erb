@@ -4,8 +4,8 @@
 
 <% if user_signed_in? %>
   <h1>Hi <%= current_user.email %></h1>
-  <%= link_to "Find tracks", tracks_path %>
-  <%= link_to "Create playlist", user_playlists_path(current_user) %>
+  <%= link_to "Browse music", tracks_path %>
+  <%= link_to "My Playlists", user_playlists_path(current_user) %>
 <% end %>
 <%if @is_creator == true %>
   <%= link_to 'Creators page', user_creator_path(@creator.id, current_user) %>
