@@ -71,3 +71,7 @@ end
 gem 'pg'
 
 gem "devise", "~> 4.9"
+
+gem 'simple_form'
+
+gem "pg_search"

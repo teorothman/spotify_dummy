@@ -1,0 +1,9 @@
+<h1>Track title: <%= track.name %></h1>
+<h1>Artist: <%= track.album.creator.name %></h1>
+<h1>Album: <%= track.album.name %></h1>
+<h1>All album songs: </h1>
+<% track.album.tracks.each do |track| %>
+  <%= track.name %>
+<% end %>
+<h1>All album songs: </h1>
+<h1>Genre: <%= track.genre.title %></h1>

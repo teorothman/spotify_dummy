@@ -1,1 +1,12 @@
 <h1>this is an index for all the tracks</h1>
+<h1>fancy search bar</h1>
+ <%= form_with url: tracks_path, method: 'get' do %>
+ <%= text_field_tag :query,
+                    params[:query],
+                    placeholder: "Search tracks"
+  %>
+        <%= submit_tag "Search", name: "" %>
+    <% end %>
+
+
+<%= render partial: 'shared/track_card', collection: @tracks, as: :track %>
