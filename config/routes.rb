@@ -9,5 +9,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   resources :tracks
+  resources :users do
+    resources :playlists, only: [:create, :new, :delete, :index]
+    resources :creators do
+      resources :albums, only: [:create, :new]
+      resources :tracks, only: [:create, :new]
+    end
+  end
+
   root "home#index"
 end
