@@ -1,0 +1,6 @@
+<%= simple_form_for ([@user, @creator, @track]), url: user_creator_tracks_path(params[:user_id], params[:creator_id]) do |f|%>
+    <%= f.input :name %>
+    <%= f.input :album_id, collection: Album.where(creator_id: params[:creator_id]), prompt: "Chose a genre" %>
+    <%= f.input :genre_id, collection: Genre.all, prompt: "Chose a genre" %>
+    <%= f.button :submit %>
+<% end %>

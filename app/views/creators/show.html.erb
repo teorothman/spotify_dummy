@@ -1,0 +1,13 @@
+<h1>This is my creator page</h1>
+<h1>Your Albums</h1>
+<% @albums.each do |album| %>
+<%= album.name %>
+<% end %>
+
+<h1>Upload a new album</h1>
+
+<%= link_to 'Upload an album', new_user_creator_album_path(params[:user_id], params[:id]) %>
+
+<h1>Upload a single</h1>
+
+<%= link_to 'Upload a single', new_user_creator_track_path(params[:user_id], params[:id]) %>

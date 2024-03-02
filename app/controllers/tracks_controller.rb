@@ -12,4 +12,23 @@ class TracksController < ApplicationController
       @tracks = Track.all
     end
   end
+
+  def new
+    @track = Track.new
+  end
+
+  def create
+    @track = Track.new(track_params)
+    if @track.save!
+      redirect_to user_creator_path(params[:user_id], params[:creator_id])
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def track_params
+    params.require(:track).permit(:name, :genre_id, :album_id)
+  end
 end

@@ -1,0 +1,5 @@
+<%= simple_form_for ([@user, @creator, @album]), url: user_creator_albums_path(params[:user_id], params[:creator_id]) do |f|%>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.button :submit %>
+<% end %>
